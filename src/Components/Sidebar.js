@@ -1,9 +1,10 @@
-import { AppBar, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, Toolbar,InputBase } from '@material-ui/core'
+import { AppBar, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, Toolbar,InputBase,Paper,Grid,Breadcrumbs,Typography } from '@material-ui/core'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faWindowClose, faBars, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faWindowClose, faBars, faSearch, faHome } from '@fortawesome/free-solid-svg-icons'
 import { faBell } from '@fortawesome/free-regular-svg-icons'
 import { createMuiTheme, makeStyles, MuiThemeProvider } from '@material-ui/core/styles'
+import { Link } from 'react-router-dom'
 
 
 // Sidebar and Navbar
@@ -83,7 +84,8 @@ export default function Sidebar() {
     
     return (
         <MuiThemeProvider theme={colortheme}>
-            <AppBar position="fixed" >
+        {/* Navbar and Sidebar */}
+            <AppBar position="fixed" elevation={0}>
                 <Toolbar>
                     <IconButton color="secondary"
                         aria-label="open drawer"
@@ -179,6 +181,45 @@ export default function Sidebar() {
                 </List>
 
             </Drawer>
+        {/* Header */}
+        <div style={{
+                height: '60px'
+        }}></div>
+        <div>
+            <Paper elevation={0} >
+                <Grid container direction="row" alignItems="center" justify="center">
+                    <Grid item md={3} sm={4} xs={1} lg={3}>
+                        <Grid container direction="column" alignItems="stretch" justify="center">
+                            <Grid item md  style={{fontSize:'28px', fontWeight:'bold'}}>
+                                Dashboard
+                            </Grid>
+                            <Grid item md>
+                                Let's see if you can build this
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item md sm xs lg>
+
+                    </Grid>
+                    <Grid item md={2} sm={1} xs={1} lg={2}>
+                            <Breadcrumbs>
+                                <Link><FontAwesomeIcon icon={ faHome}/></Link>
+                                <Link><Typography color="textPrimary">Dashboard</Typography></Link>
+                            </Breadcrumbs>
+                    </Grid>
+                </Grid> 
+            </Paper>
+        </div>
+
+        {/* Body */}
+        <div style={{
+            height: '60px'
+        }}></div>
+        <Grid direction="row" justify="center" alignItems="center">
+            
+        </Grid>
+        
+
         </MuiThemeProvider>
     )
 }
