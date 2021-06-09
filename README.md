@@ -11,3 +11,6 @@ dashboard components to be done
 08/06
 completed the header 
 left with the main content cards
+
+09/06
+Completed left with code cleanup

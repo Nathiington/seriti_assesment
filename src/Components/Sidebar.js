@@ -1,10 +1,11 @@
 import { AppBar, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, Toolbar,InputBase,Paper,Grid,Breadcrumbs,Typography } from '@material-ui/core'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faWindowClose, faBars, faSearch, faHome } from '@fortawesome/free-solid-svg-icons'
-import { faBell } from '@fortawesome/free-regular-svg-icons'
+import { faUser, faWindowClose, faBars, faSearch, faHome, faTachometerAlt, faLaptop, faChevronRight, faChartPie } from '@fortawesome/free-solid-svg-icons'
+import { faBell, faEdit, faFileAlt, faFileCode, faListAlt } from '@fortawesome/free-regular-svg-icons'
 import { createMuiTheme, makeStyles, MuiThemeProvider } from '@material-ui/core/styles'
 import { Link } from 'react-router-dom'
+import { faSpeakerDeck } from '@fortawesome/free-brands-svg-icons'
 
 
 // Sidebar and Navbar
@@ -132,7 +133,7 @@ export default function Sidebar() {
                 <List style={{ backgroundColor: '#222d32', color: 'white' }}>
                     <ListItem>
                         <ListItemIcon>
-                            <FontAwesomeIcon icon={faUser} color="white"/> 
+                            <FontAwesomeIcon icon={faTachometerAlt} color="white"/> 
                         </ListItemIcon>
                         <ListItemText color="primary">
                             Dashboard
@@ -140,15 +141,18 @@ export default function Sidebar() {
                     </ListItem>
                     <ListItem>
                         <ListItemIcon>
-                            <FontAwesomeIcon icon={faUser} color="white" />
+                            <FontAwesomeIcon icon={faLaptop} color="white" />
                         </ListItemIcon>
                         <ListItemText color="primary">
                             UI Elements
                         </ListItemText>
+                        <ListItemIcon>
+                            <FontAwesomeIcon style={{marginLeft:'35px'}} icon={faChevronRight} color="white" />
+                        </ListItemIcon>
                     </ListItem>
                     <ListItem>
                         <ListItemIcon>
-                            <FontAwesomeIcon icon={faUser} color="white" />
+                            <FontAwesomeIcon icon={faChartPie} color="white" />
                         </ListItemIcon>
                         <ListItemText color="primary">
                             Charts
@@ -156,23 +160,40 @@ export default function Sidebar() {
                     </ListItem>
                     <ListItem>
                         <ListItemIcon>
-                            <FontAwesomeIcon icon={faUser} color="white" />
+                            <FontAwesomeIcon icon={faEdit} color="white" />
+                        </ListItemIcon>
+                        <ListItemText color="primary">
+                            Forms
+                        </ListItemText>
+                        <ListItemIcon>
+                            <FontAwesomeIcon style={{ marginLeft: '35px' }} icon={faChevronRight} color="white" />
+                        </ListItemIcon>
+                    </ListItem>
+                    <ListItem>
+                        <ListItemIcon>
+                            <FontAwesomeIcon icon={faListAlt} color="white" />
                         </ListItemIcon>
                         <ListItemText color="primary">
                             Tables
                         </ListItemText>
+                        <ListItemIcon>
+                            <FontAwesomeIcon style={{ marginLeft: '35px' }} icon={faChevronRight} color="white" />
+                        </ListItemIcon>
                     </ListItem>
                     <ListItem>
                         <ListItemIcon>
-                            <FontAwesomeIcon icon={faUser} color="white" />
+                            <FontAwesomeIcon icon={faFileAlt} color="white" />
                         </ListItemIcon>
                         <ListItemText color="primary">
                             Pages
                         </ListItemText>
+                        <ListItemIcon>
+                            <FontAwesomeIcon style={{ marginLeft: '35px' }} icon={faChevronRight} color="white" />
+                        </ListItemIcon>
                     </ListItem>
                     <ListItem>
                         <ListItemIcon>
-                            <FontAwesomeIcon icon={faUser} color="white" />
+                            <FontAwesomeIcon icon={faFileCode} color="white" />
                         </ListItemIcon>
                         <ListItemText color="primary">
                             Docs
@@ -183,17 +204,20 @@ export default function Sidebar() {
             </Drawer>
         {/* Header */}
         <div style={{
-                height: '60px'
+                height: '30px',
+                marginBottom:'10px'
         }}></div>
         <div>
-            <Paper elevation={0} >
-                <Grid container direction="row" alignItems="center" justify="center">
-                    <Grid item md={3} sm={4} xs={1} lg={3}>
+                <Paper square={false} elevation={0} style={{
+                    paddingTop: '20px' 
+                }}>
+                    <Grid container direction="row" alignItems="center" justify="center" >
+                    <Grid item md={3} sm={6} xs={6} lg={3}>
                         <Grid container direction="column" alignItems="stretch" justify="center">
-                            <Grid item md  style={{fontSize:'28px', fontWeight:'bold'}}>
-                                Dashboard
+                            <Grid item md style={{ fontSize: '28px', fontFamily: 'arial', fontWeight: 'bolder',}}>
+                                <FontAwesomeIcon icon={faTachometerAlt}/> Dashboard
                             </Grid>
-                            <Grid item md>
+                            <Grid item md> 
                                 Let's see if you can build this
                             </Grid>
                         </Grid>
@@ -201,7 +225,7 @@ export default function Sidebar() {
                     <Grid item md sm xs lg>
 
                     </Grid>
-                    <Grid item md={2} sm={1} xs={1} lg={2}>
+                    <Grid item md={2} sm={6} xs={6} lg={2}>
                             <Breadcrumbs>
                                 <Link><FontAwesomeIcon icon={ faHome}/></Link>
                                 <Link><Typography color="textPrimary">Dashboard</Typography></Link>
@@ -211,13 +235,10 @@ export default function Sidebar() {
             </Paper>
         </div>
 
-        {/* Body */}
         <div style={{
-            height: '60px'
+            height: '10px'
         }}></div>
-        <Grid direction="row" justify="center" alignItems="center">
-            
-        </Grid>
+        
         
 
         </MuiThemeProvider>
