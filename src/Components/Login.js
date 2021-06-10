@@ -6,7 +6,6 @@ import { faSignInAlt, faUser } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
 function Login() {
-    // primary #009587
 
     const colortheme = createMuiTheme({
         palette: {
