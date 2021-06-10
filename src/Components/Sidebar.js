@@ -5,11 +5,6 @@ import { faUser, faWindowClose, faBars, faSearch, faHome, faTachometerAlt, faLap
 import { faBell, faEdit, faFileAlt, faFileCode, faListAlt } from '@fortawesome/free-regular-svg-icons'
 import { createMuiTheme, makeStyles, MuiThemeProvider } from '@material-ui/core/styles'
 import { Link } from 'react-router-dom'
-import { faSpeakerDeck } from '@fortawesome/free-brands-svg-icons'
-
-
-// Sidebar and Navbar
-
 
 const drawerWidth = 260;
 
@@ -85,7 +80,7 @@ export default function Sidebar() {
     
     return (
         <MuiThemeProvider theme={colortheme}>
-        {/* Navbar and Sidebar */}
+        {/* Navbar */}
             <AppBar position="fixed" elevation={0}>
                 <Toolbar>
                     <IconButton color="secondary"
@@ -122,86 +117,90 @@ export default function Sidebar() {
                     {/* Search bar, noti icon, user icon  */}
                 </Toolbar>
             </AppBar>
-            <Drawer variant="persistent" anchor="left" open={open} classes={{ paper: classes.drawerPaper }}  >
-                
-                <div className={classes.drawerHeader} style={{ backgroundColor: '#222d32', color: 'white' }}>
-                    <IconButton onClick={handleDrawerClose}>
-                        <FontAwesomeIcon icon={faWindowClose} color="red" />
-                    </IconButton>
-                </div>
-                
-                <List style={{ backgroundColor: '#222d32', color: 'white' }}>
-                    <ListItem>
-                        <ListItemIcon>
-                            <FontAwesomeIcon icon={faTachometerAlt} color="white"/> 
-                        </ListItemIcon>
-                        <ListItemText color="primary">
-                            Dashboard
-                        </ListItemText>
-                    </ListItem>
-                    <ListItem>
-                        <ListItemIcon>
-                            <FontAwesomeIcon icon={faLaptop} color="white" />
-                        </ListItemIcon>
-                        <ListItemText color="primary">
-                            UI Elements
-                        </ListItemText>
-                        <ListItemIcon>
-                            <FontAwesomeIcon style={{marginLeft:'35px'}} icon={faChevronRight} color="white" />
-                        </ListItemIcon>
-                    </ListItem>
-                    <ListItem>
-                        <ListItemIcon>
-                            <FontAwesomeIcon icon={faChartPie} color="white" />
-                        </ListItemIcon>
-                        <ListItemText color="primary">
-                            Charts
-                        </ListItemText>
-                    </ListItem>
-                    <ListItem>
-                        <ListItemIcon>
-                            <FontAwesomeIcon icon={faEdit} color="white" />
-                        </ListItemIcon>
-                        <ListItemText color="primary">
-                            Forms
-                        </ListItemText>
-                        <ListItemIcon>
-                            <FontAwesomeIcon style={{ marginLeft: '35px' }} icon={faChevronRight} color="white" />
-                        </ListItemIcon>
-                    </ListItem>
-                    <ListItem>
-                        <ListItemIcon>
-                            <FontAwesomeIcon icon={faListAlt} color="white" />
-                        </ListItemIcon>
-                        <ListItemText color="primary">
-                            Tables
-                        </ListItemText>
-                        <ListItemIcon>
-                            <FontAwesomeIcon style={{ marginLeft: '35px' }} icon={faChevronRight} color="white" />
-                        </ListItemIcon>
-                    </ListItem>
-                    <ListItem>
-                        <ListItemIcon>
-                            <FontAwesomeIcon icon={faFileAlt} color="white" />
-                        </ListItemIcon>
-                        <ListItemText color="primary">
-                            Pages
-                        </ListItemText>
-                        <ListItemIcon>
-                            <FontAwesomeIcon style={{ marginLeft: '35px' }} icon={faChevronRight} color="white" />
-                        </ListItemIcon>
-                    </ListItem>
-                    <ListItem>
-                        <ListItemIcon>
-                            <FontAwesomeIcon icon={faFileCode} color="white" />
-                        </ListItemIcon>
-                        <ListItemText color="primary">
-                            Docs
-                        </ListItemText>
-                    </ListItem>
-                </List>
 
-            </Drawer>
+
+        {/* Sidebar/Drawer */}
+        <Drawer variant="persistent" anchor="left" open={open} classes={{ paper: classes.drawerPaper }}  >
+            <div className={classes.drawerHeader} style={{ backgroundColor: '#222d32', color: 'white' }}>
+                <IconButton onClick={handleDrawerClose}>
+                    <FontAwesomeIcon icon={faWindowClose} color="red" />
+                </IconButton>
+            </div>
+            {/* List of all items in the drawer */}
+            <List style={{ backgroundColor: '#222d32', color: 'white' }}>
+                <ListItem>
+                    <ListItemIcon>
+                        <FontAwesomeIcon icon={faTachometerAlt} color="white"/> 
+                    </ListItemIcon>
+                    <ListItemText color="primary">
+                        Dashboard
+                    </ListItemText>
+                </ListItem>
+                <ListItem>
+                    <ListItemIcon>
+                        <FontAwesomeIcon icon={faLaptop} color="white" />
+                    </ListItemIcon>
+                    <ListItemText color="primary">
+                        UI Elements
+                    </ListItemText>
+                    <ListItemIcon>
+                        <FontAwesomeIcon style={{marginLeft:'35px'}} icon={faChevronRight} color="white" />
+                    </ListItemIcon>
+                </ListItem>
+                <ListItem>
+                    <ListItemIcon>
+                        <FontAwesomeIcon icon={faChartPie} color="white" />
+                    </ListItemIcon>
+                    <ListItemText color="primary">
+                        Charts
+                    </ListItemText>
+                </ListItem>
+                <ListItem>
+                    <ListItemIcon>
+                        <FontAwesomeIcon icon={faEdit} color="white" />
+                    </ListItemIcon>
+                    <ListItemText color="primary">
+                        Forms
+                    </ListItemText>
+                    <ListItemIcon>
+                        <FontAwesomeIcon style={{ marginLeft: '35px' }} icon={faChevronRight} color="white" />
+                    </ListItemIcon>
+                </ListItem>
+                <ListItem>
+                    <ListItemIcon>
+                        <FontAwesomeIcon icon={faListAlt} color="white" />
+                    </ListItemIcon>
+                    <ListItemText color="primary">
+                        Tables
+                    </ListItemText>
+                    <ListItemIcon>
+                        <FontAwesomeIcon style={{ marginLeft: '35px' }} icon={faChevronRight} color="white" />
+                    </ListItemIcon>
+                </ListItem>
+                <ListItem>
+                    <ListItemIcon>
+                        <FontAwesomeIcon icon={faFileAlt} color="white" />
+                    </ListItemIcon>
+                    <ListItemText color="primary">
+                        Pages
+                    </ListItemText>
+                    <ListItemIcon>
+                        <FontAwesomeIcon style={{ marginLeft: '35px' }} icon={faChevronRight} color="white" />
+                    </ListItemIcon>
+                </ListItem>
+                <ListItem>
+                    <ListItemIcon>
+                        <FontAwesomeIcon icon={faFileCode} color="white" />
+                    </ListItemIcon>
+                    <ListItemText color="primary">
+                        Docs
+                    </ListItemText>
+                </ListItem>
+            </List>
+
+        </Drawer>
+
+
         {/* Header */}
         <div style={{
                 height: '30px',

@@ -2,25 +2,29 @@ import React from 'react'
 import Sidebar from './Sidebar'
 import LineChart from './LineChart'
 import PieChart from './PieChart'
-import {Card, CardHeader, Grid, Typography} from '@material-ui/core'
+import {Card,Grid} from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopy, faThumbsUp } from '@fortawesome/free-regular-svg-icons'
-import { faFileUpload, faStar, faUserFriends, faUsers } from '@fortawesome/free-solid-svg-icons'
+import {faStar, faUsers } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function Dashboard() {
     return (
+        // Grey background
         <div style={{ backgroundColor:'#e5e5e5', height:'100%'}}>
+            {/* Sidebar and Navbar */}
             <Sidebar/>
-            <div>
             {/* Card Header */}
             <Grid container direction="row" justify="center" alignItems="center">
+                {/* Users Carrd */}
                 <Grid item md={3} xs={12} sm={6} lg={3}>
                     <Card elevation={2} style={{height:'90px', width:'300px'}}>
                         <Grid container direction="row" justify="center" alignItems="center">
                             <Grid item md={4} xs={6} sm={6} lg={4} style={{ backgroundColor: '#009688' }}>
                                 <Grid container direction="column" justify="center" alignItems="center">
-                                    <Grid item><FontAwesomeIcon color="white" icon={faUsers} size="3x" style={{ marginTop: '20px', marginBottom: '30px'}} /></Grid>
+                                    <Grid item>
+                                        <FontAwesomeIcon color="white" icon={faUsers} size="3x" style={{ marginTop: '20px', marginBottom: '30px'}} />
+                                    </Grid>
                                 </Grid>
                             </Grid>
                             <Grid item md={8} xs={6} sm={6} lg={8}>
@@ -32,6 +36,7 @@ export default function Dashboard() {
                         </Grid>
                     </Card>
                 </Grid>
+                {/* Likes Card */}
                 <Grid item md={3} xs={12} sm={6} lg={3}>
                     <Card elevation={2} style={{ height: '90px', width: '300px' }}>
                         <Grid container direction="row" justify="center" alignItems="center">
@@ -49,6 +54,7 @@ export default function Dashboard() {
                         </Grid>
                     </Card>
                 </Grid>
+                {/* Uploads Card */}
                 <Grid item md={3} xs={12} sm={6} lg={3}>
                     <Card elevation={2} style={{ height: '90px', width: '300px' }}>
                         <Grid container direction="row" justify="center" alignItems="center">
@@ -66,6 +72,7 @@ export default function Dashboard() {
                         </Grid>
                     </Card>
                 </Grid>
+                {/* Stars Card */}
                 <Grid item md={3} xs={12} sm={6} lg={3}>
                     <Card elevation={2} style={{ height: '90px', width: '300px' }}>
                         <Grid container direction="row" justify="center" alignItems="center">
@@ -84,9 +91,12 @@ export default function Dashboard() {
                     </Card>
                 </Grid>
             </Grid>
-            </div>
+
+            {/* Main Body */}
             <Grid container direction="row" justify="space-between" alignItems="center" style={{ marginTop: '40px', paddingBottom: '53px'}}>
+                {/* Styling Grid(No functional purpose) */}
                 <Grid></Grid>
+                {/* Monthly Sales Card */}
                 <Grid item md={6} lg={6} xs={12} sm={12}>
                     <Card style={{maxWidth:'635px',height:'400px'}}>
                         <div style={{ fontFamily: 'arial', fontWeight: 'bolder', fontSize: '24px', marginTop: '15px', marginLeft: '15px'}}>Monthly Sales</div>
@@ -94,7 +104,9 @@ export default function Dashboard() {
                         <LineChart/>
                     </Card>
                 </Grid>
+                {/* Styling Grid(No functional purpose) */}
                 <Grid></Grid>
+                {/* Support Requests Card */}
                 <Grid item md={6} lg={6} xs={12} sm={12}>
                     <Card style={{ maxWidth: '635px', height: '400px' }}>
                         <div style={{ fontFamily: 'arial', fontWeight: 'bolder', fontSize: '24px', marginTop: '15px', marginLeft: '15px'}} >Support Requests</div>
@@ -102,6 +114,7 @@ export default function Dashboard() {
                         <PieChart/>
                     </Card>
                 </Grid>
+                {/* Styling Grid(No functional purpose) */}
                 <Grid></Grid>
             </Grid>
         </div>

@@ -26,7 +26,11 @@ function Login() {
         <div className="bg">
             <MuiThemeProvider theme={colortheme}>
                 <Grid container direction='column' alignItems='center' justify='space-around' className="body" >
+                    {/* Hello */}
                     <Grid item md className="hello">Hello</Grid>
+
+
+                    {/* Sign In Card */}
                     <Grid item md={12}>
                         <Card className="card" elevation={5}>
                             <Grid container direction="column" alignItems='center' justify='space-around' spacing={3}>
@@ -36,9 +40,19 @@ function Login() {
                                     height: .5,
                                     width: '70%',
                                 }} />
-                                <Grid item> <TextField label="Username" placeholder="Username or Email" variant="outlined" style={{ width: '260px' }} /> </Grid>
-                                <Grid item> <TextField label="Password" placeholder="Password" variant="outlined" type="password" style={{ width: '260px' }} /> </Grid>
+
+                                {/* Username textfield */}
+                                <Grid item> 
+                                    <TextField label="Username" placeholder="Username or Email" variant="outlined" style={{ width: '260px' }} /> 
+                                </Grid>
+
+                                {/* Password textfield */}
+                                <Grid item> 
+                                    <TextField label="Password" placeholder="Password" variant="outlined" type="password" style={{ width: '260px' }} /> 
+                                </Grid>
+
                                 <Grid container direction="column" justify="space-between" alignItems="flex-start">
+                                    {/* Remeber me */}
                                     <Grid item md={12} style={{ fontSize: "12px", paddingLeft: '60px' }}>
                                         <FormControlLabel
                                             value="rememberMe"
@@ -48,10 +62,15 @@ function Login() {
                                             size="small"
                                         />
                                     </Grid>
+                                    {/* Forgot Password */}
                                     <Grid item md={12} style={{ fontSize: "12px", paddingLeft: '60px' }}>
-                                        <div style={{ fontSize: "16px", textAlign: 'start', fontFamily:'arial',paddingBottom:'10px' }}><Link to="#"> Forgot password?</Link></div>
+                                        <div style={{ fontSize: "16px", textAlign: 'start', fontFamily:'arial',paddingBottom:'10px' }}>
+                                            <Link to="#"> Forgot password?</Link>
+                                        </div>
                                     </Grid>
                                 </Grid>
+
+                                {/* Sign in Buttton */}
                                 <Grid item md>
                                     <Link to="/dashboard">
                                         <Button
@@ -68,8 +87,6 @@ function Login() {
                         </Card>
                     </Grid>
                 </Grid>
-                <div className="bg2">
-                </div>
             </MuiThemeProvider>
         </div>
     );
